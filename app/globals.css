@@ -56,9 +56,14 @@ body {
   font-weight: 600 !important;
 }
 
-.rbc-btn-group:first-child {
-  display: none !important ;
+.rbc-btn-group:first-child button {
+   border: none !important;
+  background-color: #82ca9d  !important;
+  margin-left: 2px !important ;
+  font-size: 13px !important;
 }
+
+
 
 .rbc-toolbar-label {
   text-align: right !important;
@@ -109,6 +114,46 @@ body {
   font-size: 14px !important;
 }
 
-.rbc-event{
-  background-color: #82ca9d;
+.rbc-event {
+  border: none !important;
+  color: black !important;
+  padding: 10px !important;
+  margin: 10px !important;
+  width: 99% !important;
+}
+
+.rbc-event:nth-child(1){
+  background-color: #e2f8ff !important;  
+}
+
+.rbc-event:nth-child(2){
+  background-color: #ffefe2 !important; 
+}
+
+.rbc-event:nth-child(3){
+  background-color: #fde2ff !important; 
+}
+
+.rbc-event:nth-child(4){
+  background-color: #ffe2eb !important; 
+}
+
+.rbc-event:nth-child(5){
+  background-color: #c5f5ca !important;  
+}
+
+.rbc-event:nth-child(6){
+  background-color: #edfb91 !important;  
+}
+
+.rbc-event:nth-child(7){
+  background-color: #f35353 !important;  
+}
+
+.rbc-event:nth-child(8){
+  background-color: rgb(181, 127, 239) !important; 
+}
+
+.rbc-event-label {
+  color: gray !important;
 }
