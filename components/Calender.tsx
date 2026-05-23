@@ -36,7 +36,7 @@ const Calender = () => {
      const [value, onChange] = useState<Value>(new Date());
   return (
 
-    <div className='bg-white rounded-lg p-4 shadow-md'>
+    <div className='bg-white rounded-lg p-4 shadow-md mb-4'>
       <Calendar onChange={onChange} value={value} />
 
        <div className='flex items-center justify-between gap-4'>

@@ -1,6 +1,6 @@
 const Announcements = () => {
   return (
-    <div className='p-4 bg-white rounded-lg shadow-md mt-8 '>
+    <div className='p-4 bg-white rounded-lg shadow-md '>
         
         <div className="flex items-center justify-between">
             <h1 className="text-lg font-semibold">Announcements</h1>
