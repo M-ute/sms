@@ -18,6 +18,7 @@ type Student = {
   phone:string;
   grade:number;
   address:string;
+  class:string;
 }
 
 
@@ -38,7 +39,7 @@ const StudentListPage = () => {
   const renderRow = (item:Student) => ( 
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-blue-200">
       <td className="flex items-center gap-4 p-4">
-        <Image src={item.photo} alt="" width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/>
+        <Image src={item.photo || "/noAvatar.png"} alt="" width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/>
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
           <p className="text-xs text-gray-500">{item.class}</p>
