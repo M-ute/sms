@@ -26,33 +26,33 @@ type Student = {
 
 
 const columns = [
-  {header:"Info", accessor:"info"}, 
-  {header: "Student ID", accessor: "studentId", className:"hidden md:table-cell"},
-  {header: "Grade", accessor: "grade", className:"hidden md:table-cell"},
-  {header: "Phone", accessor: "phone", className:"hidden lg:table-cell"},
-  {header: "Address", accessor: "address", className:"hidden lg:table-cell"},
-  {header: "Actions", accessor: "actions"}
+  {header:"Info", accessor:"info", className:"px-6 py-4"}, 
+  {header: "Student ID", accessor: "studentId", className:"px-6 py-4"},
+  {header: "Grade", accessor: "grade", className:"px-6 py-4"},
+  {header: "Phone", accessor: "phone", className:"px-6 py-4"},
+  {header: "Address", accessor: "address", className:"px-6 py-4"},
+  {header: "Actions", accessor: "actions", className:"px-6 py-4"}
   
 ]
 
 const StudentListPage = () => {
   const renderRow = (item:Student) => ( 
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-blue-200">
-      <td className="flex items-center gap-4 p-4">
-        <Image src={item.photo || "/noAvatar.png"} alt="" width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/>
+      <td className="flex items-center gap-4 px-6 py-4">
+        <Image src={item.photo} alt="" width={40} height={40} className=" xl:block w-10 h-10 rounded-full object-cover"/>
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
           <p className="text-xs text-gray-500">{item.class}</p>
         </div>
       </td>
       
-      <td className="hidden md:table-cell">{item.studentId}</td>
-      <td className="hidden md:table-cell">{item.grade}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
+      <td className="px-6 py-2">{item.studentId}</td>
+      <td className="px-6 py-2">{item.grade}</td>
+      <td className="px-6 py-2">{item.phone}</td>
+      <td className="px-6 py-2">{item.address}</td>
       <td>
-        <div className="flex items-center gap-2">
-          <Link href={`/list/teachers/${item.id}`}>
+        <div className="flex items-center gap-2 px-6 py-4">
+          <Link href={`/list/students/${item.id}`}>
               <button className="w-7 h-7 flex items-center justify-center rounded-full bg-green">
                 <Image src="/view.png" alt="" width={16} height={16}/>
               </button>
@@ -94,7 +94,9 @@ const StudentListPage = () => {
         </div>
       </div>
       {/*   LIST */}
+      <div className="overflow-x-auto w-full">
         <Table columns={columns} renderRow={renderRow} data={studentsData}/>
+      </div>
 
       {/* PAGINATION */}
         <Pagination/>

@@ -18,7 +18,7 @@ const BigCalendar = () => {
 
     return(
         <div className="overflow-x-auto w-full">
-        <div style={{ minWidth: "600px" }}>
+        <div style={{ minWidth: "720px" }}>
             <Calendar
                 localizer={localizer}
                 events={calendarEvents}

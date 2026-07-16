@@ -20,23 +20,23 @@ type Subject = {
 
 
 const columns = [
-  {header:"Subject Name", accessor:"name"}, 
-  {header: "Teachers", accessor: "teachers", className:"hidden md:table-cell"},
-  {header: "Actions", accessor: "actions"}
+  {header:"Subject Name", accessor:"name", className:"py-4 px-6"}, 
+  {header: "Teachers", accessor: "teachers", className:"py-4 px-6"},
+  {header: "Actions", accessor: "actions" ,className:"py-4 px-6"}
   
 ]
 
 const SubjectListPage = () => {
   const renderRow = (item:Subject) => ( 
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-blue-200">
-      <td className="flex items-center gap-4 p-4">
+      <td className="flex items-center gap-4 py-4 px-6">
         {item.name}
        
       </td>
-      <td className="hidden md:table-cell">{item.teachers.join(",")}</td>
+      <td className="py-4 px-6">{item.teachers.join(",")}</td>
       
       <td>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 py-4 px-6">
           <Link href={`/list/teachers/${item.id}`}>
               <button className="w-7 h-7 flex items-center justify-center rounded-full bg-green">
                 <Image src="/edit.png" alt="" width={16} height={16}/>
@@ -79,7 +79,9 @@ const SubjectListPage = () => {
         </div>
       </div>
       {/*   LIST */}
+      <div className="overflow-x-auto w-full">
         <Table columns={columns} renderRow={renderRow} data={subjectsData}/>
+      </div>
 
       {/* PAGINATION */}
         <Pagination/>

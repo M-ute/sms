@@ -23,27 +23,27 @@ type Class = {
 
 const columns = [
   {header:"Class Name", accessor:"name"}, 
-  {header: "Capacity", accessor: "capacity", className: "hidden md:table-cell"},
-  {header: "Grade", accessor: "grade", className: "hidden md:table-cell"},
-  {header: "Supervisor", accessor: "supervisor", className: "hidden md:table-cell"},
-  {header: "Actions", accessor: "actions"}
+  {header: "Capacity", accessor: "capacity", className:"py-4 px-8"},
+  {header: "Grade", accessor: "grade", className:"py-4 px-8"},
+  {header: "Supervisor", accessor: "supervisor", className:"py-4 px-8"},
+  {header: "Actions", accessor: "actions", className:"py-4 px-8"}
   
 ]
 
 const ClassListPage = () => {
   const renderRow = (item:Class) => ( 
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-blue-200">
-      <td className="flex items-center gap-4 p-4">
+      <td className="flex items-center gap-4 py-4 px-8">
         {item.name}
        
       </td>
-      <td className="hidden md:table-cell">{item.capacity}</td>
-      <td className="hidden md:table-cell">{item.grade}</td>
-      <td className="hidden md:table-cell">{item.supervisor}</td>
+      <td className="py-4 px-8">{item.capacity}</td>
+      <td className="py-4 px-8">{item.grade}</td>
+      <td className="py-4 px-8">{item.supervisor}</td>
       
       <td>
-        <div className="flex items-center gap-2">
-          <Link href={`/list/teachers/${item.id}`}>
+        <div className="flex items-center gap-2 py-4 px-8">
+          <Link href={`/list/classes/${item.id}`}>
               <button className="w-7 h-7 flex items-center justify-center rounded-full bg-green">
                 <Image src="/edit.png" alt="" width={16} height={16}/>
               </button>
@@ -85,7 +85,9 @@ const ClassListPage = () => {
         </div>
       </div>
       {/*   LIST */}
-        <Table columns={columns} renderRow={renderRow} data={classesData}/>
+        <div className="overflow-x-auto w-full">
+        <Table  columns={columns} renderRow={renderRow} data={classesData} />
+      </div>
 
       {/* PAGINATION */}
         <Pagination/>

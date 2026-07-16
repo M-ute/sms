@@ -24,9 +24,9 @@ type Parent = {
 
 const columns = [
   {header:"Info", accessor:"info"}, 
-  {header: "Student Names", accessor: "students", className:"hidden md:table-cell"},
-  {header: "Phone", accessor: "phone", className:"hidden lg:table-cell"},
-  {header: "Address", accessor: "address", className:"hidden lg:table-cell"},
+  {header: "Student Names", accessor: "students", className:"py-4 px-6"},
+  {header: "Phone", accessor: "phone", className:"py-4 px-6"},
+  {header: "Address", accessor: "address", className:"py-4 px-6"},
   {header: "Actions", accessor: "actions"}
   
 ]
@@ -34,19 +34,19 @@ const columns = [
 const ParentListPage = () => {
   const renderRow = (item:Parent) => ( 
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-blue-200">
-      <td className="flex items-center gap-4 p-4">
+      <td className="flex items-center gap-4 py-4 px-6">
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
           <p className="text-xs text-gray-500">{item?.email}</p>
         </div>
       </td>
       
-      <td className="hidden md:table-cell">{item.students.join(",")}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
+      <td className="py-4 px-8">{item.students.join(",")}</td>
+      <td className="py-4 px-8">{item.phone}</td>
+      <td className="py-4 px-8">{item.address}</td>
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/teachers/${item.id}`}>
+          <Link href={`/list/parents/${item.id}`}>
               <button className="w-7 h-7 flex items-center justify-center rounded-full bg-green">
                 <Image src="/edit.png" alt="" width={16} height={16}/>
               </button>
@@ -88,8 +88,9 @@ const ParentListPage = () => {
         </div>
       </div>
       {/*   LIST */}
+      <div className="overflow-x-auto w-full">
         <Table columns={columns} renderRow={renderRow} data={parentsData}/>
-
+      </div>
       {/* PAGINATION */}
         <Pagination/>
       
