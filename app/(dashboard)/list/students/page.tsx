@@ -14,7 +14,7 @@ type Student = {
   studentId:string; 
   name:string;
   email?:string;
-  photo?:string;
+  photo:string;
   phone:string;
   grade:number;
   address:string;
